@@ -57,7 +57,7 @@ const Nav = () => {
             <div
   className={`fixed left-1/2 -translate-x-1/2 top-[17.2rem] w-full bg-white z-10 px-[7px] pb-[4rem] pt-[2rem] xl:hidden max-w-[1024px] transition-all duration-500 ease-in-out overflow-y-auto ${
     menuOpen
-      ? 'opacity-100 max-h-[100svh] top-[23rem] pointer-events-auto'
+      ? 'opacity-100 h-[100svh] top-[23rem] pointer-events-auto'
       : 'opacity-0 max-h-0 pointer-events-none'
   }`}
 >
