@@ -1,26 +1,131 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Abel:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+    --color-gray-950: rgb(32, 32, 32);
+    --color-gray-500: rgb(122, 122, 122);
+
+    --font-playfair: 'Playfair Display', serif;
+    --font-mont: 'Montserrat', sans-serif;
+    --font-sen: 'Sen', sans-serif;
+    --font-abel: 'abel', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer components {
+    .container {
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-block: 1.5rem;
+        padding-inline: 1.8rem;
+    }
+
+    .txt-nav {
+        font-size: 15.5px;
+        font-weight: 600;
+        color: var(--color-gray-950);
+        text-transform: uppercase;
+        font-family: var(--font-mont);
+        letter-spacing: 0.5px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-gray-950);
+            transition: width 0.3s ease-in-out;
+        }
+
+        &:hover {
+            color: var(--color-gray-950);
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+        
+        @media (min-width: 1280px) {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+
+    .h1 {
+        font-family: var(--font-playfair);
+        font-size: 40px;
+        letter-spacing: -2.5px;
+        line-height: 35px;
+
+        display: block;
+        font-style: italic;
+
+        @media (min-width: 1024px) {
+            font-size: 80px;
+            letter-spacing: -4.8px;
+            line-height: 66px;
+        }
+
+        @media (min-width: 1280px) {
+            font-size: 96px;
+            line-height: 82px;
+        }
+    }
+
+    .h2 {
+        font-family: var(--font-playfair);
+        font-size: 40px;
+        letter-spacing: -2px;
+        line-height: 40px;
+        color: var(--color-gray-950);
+        max-width: 17.5rem;
+
+        @media (min-width: 1024px) {
+            font-size: 60px;
+            letter-spacing: -3.6px;
+            line-height: 58px;
+            max-width: 25.8rem;
+        }
+ 
+
+        .h6 {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-family: var(--font-mont);
+            font-weight: 500;
+            letter-spacing: 6.72px;
+            line-height: 18px;
+            color: var(--color-gray-950);
+
+            @media (min-width: 1024px) {
+                font-size: 10px;
+            }
+
+            @media (min-width: 1280px) {
+                font-size: 14px;
+            }
+        }
+
+        .body-font {
+        }
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.swiper-pagination-bullet {
+    background: #333 !important;
+    opacity: 0.6;
+    transition: 0.3s;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.swiper-pagination-bullet-active {
+    background: var(--color-gray-950) !important;
+    opacity: 1;
 }
