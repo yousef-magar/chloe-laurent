@@ -67,7 +67,7 @@ const Nav = () => {
                             <Link
                                 key={index}
                                 href={link.path}
-                                className={`txt-nav pb-[2px] border-b-2 ${
+                                className={`txt-nav pb-[2px] w-fit border-b-2 ${
                                     currentPath === link.path
                                         ? 'border-black'
                                         : 'border-transparent'
